@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+</head>
+<body>
+    <div id="dashboard">
+            <h1>Foobar!!</h1>
+        <div class="queue">
+            <p class="queue-text">Queue!</p>
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="bartender">
+            <p class="bar">Bartenders!</p>
+            <div class="person">
+            <div class="peter">
+                <div class="overlay"></div>
+                <div class="overlay2"></div>
+                <h3>name</h3>
+                <img src="peter.png">
+                <h4>status</h4>
+            </div>
+            <div class="jonas">
+                <div class="overlay"></div>
+                <div class="overlay2"></div>
+                <h3>name</h3>
+                <img src="jonas.png">
+                <h4>status</h4>
+            </div>
+            <div class="martin">
+                <div class="overlay"></div>
+                <div class="overlay2"></div>
+                <h3>name</h3>
+                <img src="martin.png">
+                <h4>status</h4>
+            </div>
+        </div>
+        </div>
+        <div class="beer_amounts">
+                <i class="fas fa-thumbs-up"></i>
+            <p class="change">Change the Keg!</p>
+            <div class="check1">
+                <p class="beer-name"></p>
+                    <button onclick="document.querySelector('.check1').style.display = 'none';">DONE</button>
+                <p class="low">Level Low change Keg</p>
+            </div>
+            <div class="check2">
+                <p class="beer-name"></p>
+                    <button onclick="document.querySelector('.check1').style.display = 'none';">DONE</button>
+                <p class="low">Level Low change Keg</p>
+            </div>
+            <div class="check3">
+                <p class="beer-name"></p>
+                    <button onclick="document.querySelector('.check1').style.display = 'none';">DONE</button>
+                <p class="low">Level Low change Keg</p>
+            </div>
+            <div class="check4">
+                <p class="beer-name"></p>
+                    <button onclick="document.querySelector('.check1').style.display = 'none';">DONE</button>
+                <p class="low">Level Low change Keg</p>
+            </div>
+            <div class="check5">
+                <p class="beer-name"></p>
+                    <button onclick="document.querySelector('.check1').style.display = 'none';">DONE</button>
+                <p class="low">Level Low change Keg</p>
+            </div>
+            <div class="check6">
+                <p class="beer-name"></p>
+                    <button onclick="document.querySelector('.check1').style.display = 'none';">DONE</button>
+                <p class="low">Level Low change Keg</p>
+            </div>
+            <div class="check7">
+                <p class="beer-name"></p>
+                    <button onclick="document.querySelector('.check1').style.display = 'none';">DONE</button>
+                <p class="low">Level Low change Keg</p>
+            </div>
+        </div>
+        
+        
+        <div class="serving">
+            <p class="serving-text">Serving!</p>
+        </div>
+
+    <div class="beer_type">
+        <div class="beer-container">
+        <p class="type">Beer type information!</p>
+        <p class="taps">How must beer there are left in keg!</p>
+            <div id="slideshow-container">
+            </div>
+
+
+    <template id="slider">
+            <div class="mySlides fade">
+                       <div class="ikon-billede">
+                        <img src="" alt="">
+                        </div>
+                        <h3 class="overskrift-ikon"></h3>
+                      <button>Read more</button>
+                      <div class="prikker">
+                            <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span> 
+                        </div>
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    
+                    </div>
+    </template>
+
+    <div class="taps-container">
+        <div class="tap1">
+        <h4 class="beer-name"></h4>
+        <div class="tapbox">
+            <p class="procent">jdfdkf</p>
+            <div class="tap-level"></div>
+        </div>
+        </div>
+
+        <div class="tap2">
+        <h4 class="beer-name"></h4>
+        <div class="tapbox">
+            <p class="procent"></p>
+            <div class="tap-level"></div>
+        </div>
+        </div>
+
+        <div class="tap3">
+        <h4 class="beer-name"></h4>
+        <div class="tapbox">
+            <p class="procent"></p>
+            <div class="tap-level"></div>
+        </div>
+        </div>
+
+        <div class="tap4">
+        <h4 class="beer-name"></h4>
+        <div class="tapbox">
+            <p class="procent"></p>
+            <div class="tap-level"></div>
+        </div>
+        </div>
+
+        <div class="tap5">
+        <h4 class="beer-name"></h4>
+        <div class="tapbox">
+            <p class="procent"></p>
+            <div class="tap-level"></div>
+        </div>
+        </div>
+
+        <div class="tap6">
+            <h4 class="beer-name"></h4>
+            <div class="tapbox">
+                <p class="procent"></p>
+                <div class="tap-level"></div>
+            </div>
+        </div>
+
+        <div class="tap7">
+            <h4 class="beer-name"></h4>
+            <div class="tapbox">
+                <p class="procent"></p>
+                <div class="tap-level"></div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    </div>
+</div>
+    <div class="modal-beer">
+        <div class="modal-text">
+            <div class="info"></div>
+            <img class="billede" src="" alt="">
+            <div class="ar"></div>
+            <div class="ap"></div>
+            <div class="fl"></div>
+            <div class="mo"></div>
+            <div class="ov"></div>
+            <button class="close" onclick="document.querySelector('.modal-beer').style.display = 'none';">close</button>
+        </div>
+    </div>
+</div>
+    
+</body>
+
+<script src="http://petlatkea.dk/2018/front/foobar.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<script src="/source/main.js"></script>
+</html>
