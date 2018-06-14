@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.min.css">
     <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 </head>
@@ -45,7 +45,6 @@
         </div>
         </div>
         <div class="beer_amounts">
-                <i class="fas fa-thumbs-up"></i>
             <p class="change">Change the Keg!</p>
             <div class="check1">
                 <p class="beer-name"></p>
@@ -54,32 +53,32 @@
             </div>
             <div class="check2">
                 <p class="beer-name"></p>
-                    <button onclick="document.querySelector('.check1').style.display = 'none';">DONE</button>
+                    <button onclick="document.querySelector('.check2').style.display = 'none';">DONE</button>
                 <p class="low">Level Low change Keg</p>
             </div>
             <div class="check3">
                 <p class="beer-name"></p>
-                    <button onclick="document.querySelector('.check1').style.display = 'none';">DONE</button>
+                    <button onclick="document.querySelector('.check3').style.display = 'none';">DONE</button>
                 <p class="low">Level Low change Keg</p>
             </div>
             <div class="check4">
                 <p class="beer-name"></p>
-                    <button onclick="document.querySelector('.check1').style.display = 'none';">DONE</button>
+                    <button onclick="document.querySelector('.check4').style.display = 'none';">DONE</button>
                 <p class="low">Level Low change Keg</p>
             </div>
             <div class="check5">
                 <p class="beer-name"></p>
-                    <button onclick="document.querySelector('.check1').style.display = 'none';">DONE</button>
+                    <button onclick="document.querySelector('.check5').style.display = 'none';">DONE</button>
                 <p class="low">Level Low change Keg</p>
             </div>
             <div class="check6">
                 <p class="beer-name"></p>
-                    <button onclick="document.querySelector('.check1').style.display = 'none';">DONE</button>
+                    <button onclick="document.querySelector('.check6').style.display = 'none';">DONE</button>
                 <p class="low">Level Low change Keg</p>
             </div>
             <div class="check7">
                 <p class="beer-name"></p>
-                    <button onclick="document.querySelector('.check1').style.display = 'none';">DONE</button>
+                    <button onclick="document.querySelector('.check7').style.display = 'none';">DONE</button>
                 <p class="low">Level Low change Keg</p>
             </div>
         </div>
@@ -87,7 +86,9 @@
         
         <div class="serving">
             <p class="serving-text">Closing time!</p>
+            <div class="ur">
             <div id="closingtime"></div>
+            </div>
         </div>
 
     <div class="beer_type">
@@ -178,12 +179,17 @@
         <div class="modal-text">
             <div class="info"></div>
             <img class="billede" src="" alt="">
+            <div class="ca"></div>
+            <div class="po"></div>
+            <div class="alc"></div>
+        <div class="beskrivelse">
             <div class="ar"></div>
             <div class="ap"></div>
             <div class="fl"></div>
             <div class="mo"></div>
             <div class="ov"></div>
-            <button class="close" onclick="document.querySelector('.modal-beer').style.display = 'none';">close</button>
+        </div>
+            <button class="close" onclick="document.querySelector('.modal-beer').style.display = 'none';">Close</button>
         </div>
     </div>
 </div>

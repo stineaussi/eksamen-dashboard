@@ -8,10 +8,9 @@ function loadscript(){
     let data = FooBar.getData();
     let myJson = JSON.parse(data);
     let queueKnow = myJson.queue.length;
-    // let template = document.querySelector("#level").content;
 
 
-
+// Henter info in omkring bartanderne og billderne
     let bartenderNameZero = myJson.bartenders[0].name;
     let bartenderStatusZero = myJson.bartenders[0].status;
     let bartenderNameOne = myJson.bartenders[1].name;
@@ -25,6 +24,9 @@ function loadscript(){
     document.querySelector(".jonas h4").textContent = bartenderStatusOne;
     document.querySelector(".martin h3").textContent = bartenderNameTwo;
     document.querySelector(".martin h4").textContent = bartenderStatusTwo;
+
+// Ligger overlay på bartanderne, får det til at skifte alt efter om de arbejder eller står klar.
+
     if(bartenderStatusZero == "WORKING"){
         document.querySelector(".peter .overlay").style.display = "none";
         document.querySelector(".peter .overlay2").style.display = "block";
@@ -62,7 +64,7 @@ let myChart = new Chart(ctx, {
             label: 'peopel',
             data: queue,
             backgroundColor: [
-                'rgba(75, 192, 192, 0.2)',
+                'rgba(51, 190, 51, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -70,7 +72,7 @@ let myChart = new Chart(ctx, {
                 'rgba(54, 162, 235, 0.2)'
             ],
             borderColor: [
-                'rgba(75, 192, 192, 1)',
+                'rgba(51, 190, 51, 1)',
                 'rgba(54, 162, 235, 1)',
                 'rgba(54, 162, 235, 1)',
                 'rgba(54, 162, 235, 1)',
@@ -97,41 +99,42 @@ let myChart = new Chart(ctx, {
     }
 });
 
-if(myJson.taps[0].level <= "2500"){
-    document.querySelector(".check1").style.display = "block";
+//Definere hvornår der skal advares om der skal skiftes KEG
+
+if(myJson.taps[0].level <= "500"){
+    document.querySelector(".check1").style.display = "grid";
 }
 document.querySelector(".check1 .beer-name").textContent = myJson.taps[0].beer;
 
-if(myJson.taps[1].level <= "2500"){
-    document.querySelector(".check2").style.display = "block";
+if(myJson.taps[1].level <= "500"){
+    document.querySelector(".check2").style.display = "grid";
 }
 document.querySelector(".check2 .beer-name").textContent = myJson.taps[1].beer;
 
-if(myJson.taps[2].level <= "2500"){
-    document.querySelector(".check3").style.display = "block";
+if(myJson.taps[2].level <= "500"){
+    document.querySelector(".check3").style.display = "grid";
 }
 document.querySelector(".check3 .beer-name").textContent = myJson.taps[2].beer;
 
-if(myJson.taps[3].level <= "2500"){
-    document.querySelector(".check4").style.display = "block";
+if(myJson.taps[3].level <= "500"){
+    document.querySelector(".check4").style.display = "grid";
 }
 document.querySelector(".check4 .beer-name").textContent = myJson.taps[3].beer;
 
 if(myJson.taps[4].level <= "500"){
-    document.querySelector(".check5").style.display = "block";
+    document.querySelector(".check5").style.display = "grid";
 }
 document.querySelector(".check5 .beer-name").textContent = myJson.taps[4].beer;
 
 if(myJson.taps[5].level <= "500"){
-    document.querySelector(".check6").style.display = "block";
+    document.querySelector(".check6").style.display = "grid";
 }
 document.querySelector(".check6 .beer-name").textContent = myJson.taps[5].beer;
 
 if(myJson.taps[6].level <= "500"){
-    document.querySelector(".check7").style.display = "block";
+    document.querySelector(".check7").style.display = "grid";
 }
 document.querySelector(".check7 .beer-name").textContent = myJson.taps[6].beer;
-
 
 // Tap level 
 
@@ -167,6 +170,8 @@ document.querySelector(".tap7 .procent").textContent = myJson.taps[6].level / my
 }
 setInterval(loadscript, 10000);
 
+//Cloner til slider
+
     let data2 = FooBar.getData();
     let myJson2 = JSON.parse(data2);
     let beer = myJson2.beertypes;
@@ -191,20 +196,25 @@ function beerType(){
     
 }
 
+//får data ind til modal vindue
+
 function readmore(event){
     let mitID = event.currentTarget.getAttribute("data-id");
     let viewMore = beer.find(function(element){
         return element.name == mitID;
     })
 
-    document.querySelector(".modal-beer").style.display = "block";
+    document.querySelector(".modal-beer").style.display = "grid";
     document.querySelector(".modal-text .info").textContent = viewMore.name;
     document.querySelector(".modal-text .billede").setAttribute("src", viewMore.label);
-    document.querySelector(".modal-text .ar").textContent = viewMore.description.aroma;
-    document.querySelector(".modal-text .ap").textContent = viewMore.description.appearance;
-    document.querySelector(".modal-text .fl").textContent = viewMore.description.flavor;
-    document.querySelector(".modal-text .mo").textContent = viewMore.description.mouthfeel;
-    document.querySelector(".modal-text .ov").textContent = viewMore.description.overallImpression;
+    document.querySelector(".modal-text .ca").innerHTML = "<strong>Category: </strong>" + viewMore.category;
+    document.querySelector(".modal-text .po").innerHTML = "<strong>Popularity: </strong>" + viewMore.popularity;
+    document.querySelector(".modal-text .alc").innerHTML = "<strong>Alc: </strong>" + viewMore.alc;
+    document.querySelector(".modal-text .ar").innerHTML = "<strong>Aroma: </strong>" + viewMore.description.aroma;
+    document.querySelector(".modal-text .ap").innerHTML = "<strong>Appearance: </strong>" + viewMore.description.appearance;
+    document.querySelector(".modal-text .fl").innerHTML = "<strong>Flavor: </strong>" + viewMore.description.flavor;
+    document.querySelector(".modal-text .mo").innerHTML = "<strong>Mouthfeel: </strong>" + viewMore.description.mouthfeel;
+    document.querySelector(".modal-text .ov").innerHTML = "<strong>Overall impression: </strong>" + viewMore.description.overallImpression;
 }
 
 
@@ -233,29 +243,28 @@ function showSlides(n) {
 
 function countdown(){
 
-    // Set the date we're counting down to
-let countDownDate = new Date("Sep 5, 3000 22:00:00").getTime();
+//Sætter den til hvad vi skal tælle ned til
+    let countDownDate = new Date("Sep 5, 3000 22:00:00").getTime();
 
-// Update the count down every 1 second
-let x = setInterval(function() {
+//Update the count down every 1 second
+    let x = setInterval(function() {
 
-    // Get todays date and time
+//Får det nuværnende tidspunkt for dagen
     let now = new Date().getTime();
     
-    // Find the distance between now an the count down date
+//Finder ud af hvor lang tid der er fra nuværende tidspunkt til nedtællings tidspunkt
     let distance = countDownDate - now;
     
-    // Time calculations for days, hours, minutes and seconds
-    //var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+//Tiden for timer, minutter og sekunder
     let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    // Output the result in an element with id="demo"
+//Får resultatet ud til id="closingtime"
     document.getElementById("closingtime").innerHTML = hours + "h "
     + minutes + "m " + seconds + "s ";
     
-    // If the count down is over, write some text 
+//Hvis tiden er gået over tid skriver den noget tekst
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("closingtime").innerHTML = "EXPIRED";
