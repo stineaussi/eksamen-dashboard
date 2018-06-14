@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "sass": "node-sass source/style.scss build/style.min.css --output-style compressed",
-    "csswatch": "watch \"npm run sass\" source/"
+    "csswatch": "watch \"npm run sass\" source/",
+    "transpile": "babel source/main.js --out-file build/main.transpile.js --presets=env",
+    "watcher": "watch \"npm run sass && npm run transpile\" source/"
   },
   "author": "",
   "license": "ISC",
